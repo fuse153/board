@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- namespace는 다른 것과 구별하기 위해 반드시 기입해야 함. -->
+<mapper namespace="com.start4321.web.mybatis.boardMapper">
+
+
+	<insert id="write_insert" parameterType="write">
+		insert into board(id, name, nick, subject, content ,regist_day ,hit, is_html,file_name_0) values ('1','1','1',#{subject},#{content},now(),'1','1','1');
+	</insert>
+
+	<select id="getSearchList" resultType="write">
+		select * from board
+	</select>
+
+
+</mapper>
+
+
+	
+	
+
+
+<!-- 중간 연결을  하는 것을 'mapping'이라함 -->
