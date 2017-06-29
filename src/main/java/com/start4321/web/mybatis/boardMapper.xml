@@ -13,6 +13,10 @@
 	<select id="getSearchList" resultType="write">
 		select * from board
 	</select>
+	
+	<select id="viewSearchList" parameterType="String" resultType="write">
+		select * from board where content = #{content}
+	</select>
 
 
 </mapper>

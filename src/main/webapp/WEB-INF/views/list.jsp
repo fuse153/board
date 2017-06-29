@@ -65,7 +65,7 @@ body {
 			<c:forEach items="${list}" var="lists" >
 				<tr>
 					<td>${lists.getNum()}</td>
-					<td><a href="writing_view">${lists.getSubject()}</a></td>
+					<td><a href="writing_view?subject=${lists.getSubject()}">${lists.getSubject()}</a></td>
 					<td>¾Æ¹«°³</td>
 					<td>${lists.getRegist_day()}</td>
 					<td>${lists.getHit() }</td>

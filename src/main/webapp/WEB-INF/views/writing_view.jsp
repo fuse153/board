@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>게시판 글보기</title>
+<title>게시판 글쓰기</title>
 
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" />
@@ -51,7 +51,7 @@ col1 {
 
 
 			<div style="text-align: right">
-				<input type="submit" class='ui inverted blue button' value="글등록" />
+				<input type="submit" class='ui inverted blue button' value="글 수정" />
 				<a href="list"><button class='ui inverted blue button'>목록</button></a>
 			</div>
 		</form>

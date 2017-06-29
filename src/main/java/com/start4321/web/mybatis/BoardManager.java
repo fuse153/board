@@ -35,11 +35,23 @@ public class BoardManager {
 	}
 
 	public static List list_search(){
+		
 		SqlSession session = sqlSessionFactory.openSession();
 		
 		List list = null;
 		
 		list = session.selectList("getSearchList");
+		
+		return list;
+	}
+	
+	public static List view_search(String subject){
+		
+		SqlSession session = sqlSessionFactory.openSession();
+		
+		List list = null;
+		
+		list = session.selectList("viewSearchList",subject);
 		
 		return list;
 	}
