@@ -7,7 +7,7 @@
 
 
 	<insert id="write_insert" parameterType="write">
-		insert into board(id, name, nick, subject, content ,regist_day ,hit, is_html,file_name_0) values ('1','1','1',#{subject},#{content},now(),'1','1','1');
+		insert into board(id, name, nick, subject, content ,regist_day,hit, is_html,file_name_0) values ('1','1','1',#{subject},#{content},now(),'1','1','1')
 	</insert>
 
 	<select id="getSearchList" resultType="write">
@@ -16,6 +16,7 @@
 
 
 </mapper>
+
 
 
 	

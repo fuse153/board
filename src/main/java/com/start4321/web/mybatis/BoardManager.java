@@ -28,7 +28,7 @@ public class BoardManager {
 	
 	public static void write_insert(write writes){
 		SqlSession session = sqlSessionFactory.openSession();
-
+		System.out.println(writes.getContent());
 		session.insert("write_insert", writes);
 		session.commit();
 		

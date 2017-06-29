@@ -17,6 +17,12 @@ public class BoardController {
 			return "write_form";
 		}
 		
+		@RequestMapping(value = "/writing_view", method = RequestMethod.GET)
+		public String writing_view(){
+			
+			return "writing_view";
+		}
+		
 		@RequestMapping(value = "/list", method = RequestMethod.GET)
 		public ModelAndView Board_list(){
 
@@ -28,7 +34,7 @@ public class BoardController {
 		@RequestMapping(value = "/write_form", method = RequestMethod.POST)
 			public String write_insert(write write){
 				BoardManager.write_insert(write);
-				return "list";
+				return "home";
 			}
 			
 		

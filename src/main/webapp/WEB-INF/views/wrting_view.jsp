@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>게시판 글쓰기</title>
+<title>게시판 글보기</title>
 
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" />
@@ -33,7 +33,7 @@ col1 {
 
 		<!-- form start -->
 		<form action="write_form" method="post">
-			<h1 color="white">게시판 글쓰기</h1>
+			<h1 color="white">게시판 글보기</h1>
 			<br> <br>
 			<div style="text-align: center"></div>
 
