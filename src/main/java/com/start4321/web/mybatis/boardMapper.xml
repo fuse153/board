@@ -15,7 +15,7 @@
 	</select>
 	
 	<select id="viewSearchList" parameterType="String" resultType="write">
-		select * from board where content = #{content}
+		select * from board where content = #{subject}
 	</select>
 
 

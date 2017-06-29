@@ -48,7 +48,7 @@ public class BoardManager {
 	public static List view_search(String subject){
 		
 		SqlSession session = sqlSessionFactory.openSession();
-		
+		System.out.println("매니저 쪽 :" + subject );
 		List list = null;
 		
 		list = session.selectList("viewSearchList",subject);

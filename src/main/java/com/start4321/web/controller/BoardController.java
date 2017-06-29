@@ -21,8 +21,7 @@ public class BoardController {
 		
 		@RequestMapping(value = "/writing_view", method = RequestMethod.GET)
 		public ModelAndView writing_view(String subject){
-				
-	
+				System.out.println("컨트롤 쪽 :" + subject );
 				ModelAndView mv = new ModelAndView("writing_view");
 				mv.addObject("view", BoardManager.view_search(subject));
 				return mv;
