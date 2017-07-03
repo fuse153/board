@@ -52,9 +52,9 @@ col1 {
 
 			<div style="text-align: right">
 				<input type="submit" class='ui inverted blue button' value="글등록" />
-				<a href="list"><button class='ui inverted blue button'>목록</button></a>
 			</div>
 		</form>
+				<a href="list"><button class='ui inverted blue button'>목록</button></a>
 		<!-- form end -->
 
 	</div>

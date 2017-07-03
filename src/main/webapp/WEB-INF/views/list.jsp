@@ -31,13 +31,14 @@ body {
 		<br> # 총 개의 게시물이 있습니다.
 		<div style="text-align: right">
 		
-		<!-- select box start -->
-			<div class="ui compact selection dropdown">
+		<!-- select box start -->			
+			<div class="ui selection dropdown">
+			  <input type="hidden" name="gender">
 			  <i class="dropdown icon"></i>
-			  <div class="text">검색</div>
+			  <div class="default text">검색목록</div>
 			  <div class="menu">
-			    <div class="item">제목</div>
-			    <div class="item">글쓴이</div>
+			    <div class="item" data-value="1">제목</div>
+			    <div class="item" data-value="0">글쓴이</div>
 			  </div>
 			</div>
 		<!-- select box end -->
@@ -65,7 +66,7 @@ body {
 			<c:forEach items="${list}" var="lists" >
 				<tr>
 					<td>${lists.getNum()}</td>
-					<td><a href="writing_view?subject=${lists.getSubject()}">${lists.getSubject()}</a></td>
+					<td><a href="writing_view?num=${lists.getNum()}">${lists.getSubject()}</a></td>
 					<td>아무개</td>
 					<td>${lists.getRegist_day()}</td>
 					<td>${lists.getHit() }</td>

@@ -22,7 +22,7 @@
 body {
 	margin: 100px;
 	background-color: beige;
-}
+}게시판 글수정
 
 col1 {
 	float: left;
@@ -34,28 +34,33 @@ col1 {
 
 		<!-- form start -->
 		<form action="write_form" method="post">
-			<h1 color="white">게시판 글보기</h1>
+			<h1>게시판 글보기</h1>
 			<br> <br>
 			<div style="text-align: center"></div>
-			<c:forEach items="view" var="views">
 			<div class="ui form">
 				<div class="field">
-					<a class="ui big green label">title</a> <br> <br> <input
-						type="text" name="subject"  />
+					<a class="ui big green label">title</a> <br> <br> 
+			
+					<input type="text" name="subject" value="<c:out value="${param.view}" />" />
+					<%String view = request.getParameter("view");
+						
+					%>
+					 <%=view%>
+
+
 				</div>
 				<div class="field">
 					<a class="ui big green label">Content</a> <br> <br>
-					<textarea rows="7" name="content"></textarea>
+					<textarea rows="7" name="content" ></textarea>
 				</div>
 				<br> <br>
 			</div>
-			</c:forEach>
-
-			<div style="text-align: right">
-				<input type="submit" class='ui inverted blue button' value="글 수정" />
-				<a href="list"><button class='ui inverted blue button'>목록</button></a>
-			</div>
+			
 		</form>
+			<div style="text-align: right">
+				<a href="list"><button class='ui inverted blue button'>목록</button></a>
+				<!--<input type="submit" class='ui inverted blue button' value="글 수정" />-->
+			</div>
 		<!-- form end -->
 
 	</div>

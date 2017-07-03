@@ -45,15 +45,15 @@ public class BoardManager {
 		return list;
 	}
 	
-	public static List view_search(String subject){
+	public static String view_search(int num){
 		
 		SqlSession session = sqlSessionFactory.openSession();
-		System.out.println("概聪历 率 :" + subject );
-		List list = null;
+		System.out.println("概聪历 率 :" + num );
+		String One = null;
 		
-		list = session.selectList("viewSearchList",subject);
+		One = session.selectOne("viewSearchList",num);
 		
-		return list;
+		return One;
 	}
 	
 	

@@ -20,10 +20,10 @@ public class BoardController {
 		}
 		
 		@RequestMapping(value = "/writing_view", method = RequestMethod.GET)
-		public ModelAndView writing_view(String subject){
-				System.out.println("牧飘费 率 :" + subject );
+		public ModelAndView writing_view(int num){
+				System.out.println("牧飘费 率 :" + num );
 				ModelAndView mv = new ModelAndView("writing_view");
-				mv.addObject("view", BoardManager.view_search(subject));
+				mv.addObject("view", BoardManager.view_search(num));
 				return mv;
 		}
 		
@@ -38,7 +38,7 @@ public class BoardController {
 		@RequestMapping(value = "/write_form", method = RequestMethod.POST)
 			public String write_insert(write write){
 				BoardManager.write_insert(write);
-				return "home";
+				return "write_form";
 			}
 			
 		
