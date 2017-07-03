@@ -28,18 +28,30 @@ public class BoardManager {
 	
 	public static void write_insert(write writes){
 		SqlSession session = sqlSessionFactory.openSession();
-
+		System.out.println(writes.getContent());
 		session.insert("write_insert", writes);
 		session.commit();
 		
 	}
 
 	public static List list_search(){
+		
 		SqlSession session = sqlSessionFactory.openSession();
 		
 		List list = null;
 		
 		list = session.selectList("getSearchList");
+		
+		return list;
+	}
+	
+	public static List view_search(String subject){
+		
+		SqlSession session = sqlSessionFactory.openSession();
+		System.out.println("매니저 쪽 :" + subject );
+		List list = null;
+		
+		list = session.selectList("viewSearchList",subject);
 		
 		return list;
 	}

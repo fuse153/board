@@ -64,11 +64,11 @@ body {
 			<tbody>
 			<c:forEach items="${list}" var="lists" >
 				<tr>
-					<td>1</td>
-					<td><a href="write_form">${lists.getSubject()}</a></td>
-					<td>${lists.getContent()}</td>
-					<td>1</td>
-					<td>1</td>
+					<td>${lists.getNum()}</td>
+					<td><a href="writing_view?subject=${lists.getSubject()}">${lists.getSubject()}</a></td>
+					<td>¾Æ¹«°³</td>
+					<td>${lists.getRegist_day()}</td>
+					<td>${lists.getHit() }</td>
 				</tr>
 			</c:forEach>
 			</tbody>

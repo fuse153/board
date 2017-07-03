@@ -1,6 +1,7 @@
 package com.start4321.web.controller;
 
 import org.springframework.stereotype.Controller;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -12,9 +13,18 @@ import com.start4321.web.mybatis.BoardManager;
 public class BoardController {
 
 		@RequestMapping(value = "/write_form", method = RequestMethod.GET)
-		public String Board_write(){
+		public String Board_write(write write){
 						
+			System.out.println(write.getContent());
 			return "write_form";
+		}
+		
+		@RequestMapping(value = "/writing_view", method = RequestMethod.GET)
+		public ModelAndView writing_view(String subject){
+				System.out.println("컨트롤 쪽 :" + subject );
+				ModelAndView mv = new ModelAndView("writing_view");
+				mv.addObject("view", BoardManager.view_search(subject));
+				return mv;
 		}
 		
 		@RequestMapping(value = "/list", method = RequestMethod.GET)
@@ -28,7 +38,7 @@ public class BoardController {
 		@RequestMapping(value = "/write_form", method = RequestMethod.POST)
 			public String write_insert(write write){
 				BoardManager.write_insert(write);
-				return "list";
+				return "home";
 			}
 			
 		
