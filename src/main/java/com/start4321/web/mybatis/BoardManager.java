@@ -31,6 +31,14 @@ public class BoardManager {
 		System.out.println(writes.getContent());
 		session.insert("write_insert", writes);
 		session.commit();
+		session.close();
+	}
+
+	public static void write_update(write writes){
+		SqlSession session = sqlSessionFactory.openSession();
+		session.insert("write_update", writes);
+		session.commit();
+		session.close();
 		
 	}
 
@@ -45,14 +53,12 @@ public class BoardManager {
 		return list;
 	}
 	
-	public static String view_search(int num){
+	public static List view_search(int num){
 		
 		SqlSession session = sqlSessionFactory.openSession();
-		System.out.println("매니저 쪽 :" + num );
-		String One = null;
+		List One = null;
 		
-		One = session.selectOne("viewSearchList",num);
-		
+		One = session.selectList("viewSearchList",num);
 		return One;
 	}
 	

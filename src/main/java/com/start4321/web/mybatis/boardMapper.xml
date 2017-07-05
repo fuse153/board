@@ -10,11 +10,15 @@
 		insert into board(id, name, nick, subject, content ,regist_day,hit, is_html,file_name_0) values ('1','1','1',#{subject},#{content},now(),'1','1','1')
 	</insert>
 
+	<update id="write_update" parameterType="write">
+		update board set subject=#{subject},content=#{content} where num = #{num}
+	</update>
+
 	<select id="getSearchList" resultType="write">
 		select * from board
 	</select>
 	
-	<select id="viewSearchList" parameterType="int" resultType="string">
+	<select id="viewSearchList" parameterType="int" resultType="write">
 		select * from board where num = #{num}
 	</select>
 

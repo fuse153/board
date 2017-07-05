@@ -21,7 +21,6 @@ public class BoardController {
 		
 		@RequestMapping(value = "/writing_view", method = RequestMethod.GET)
 		public ModelAndView writing_view(int num){
-				System.out.println("컨트롤 쪽 :" + num );
 				ModelAndView mv = new ModelAndView("writing_view");
 				mv.addObject("view", BoardManager.view_search(num));
 				return mv;
@@ -36,11 +35,23 @@ public class BoardController {
 		}
 		
 		@RequestMapping(value = "/write_form", method = RequestMethod.POST)
-			public String write_insert(write write){
+			public ModelAndView write_insert(write write){
 				BoardManager.write_insert(write);
-				return "write_form";
-			}
+				ModelAndView mv = new ModelAndView("list");
+				mv.addObject("list", BoardManager.list_search());
+				return mv;
+		}
 			
+		
+		@RequestMapping(value = "/write_modify", method = RequestMethod.POST)
+		public ModelAndView write_update(write write){
+			BoardManager.write_update(write);
+			ModelAndView mv = new ModelAndView("list");
+			mv.addObject("list", BoardManager.list_search());
+			return mv;
+
+		}
+		
 		
 		
 		
